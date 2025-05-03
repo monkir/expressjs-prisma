@@ -2,12 +2,14 @@ const express = require('express');
 const cors = require('cors');
 const userRoutes = require('./src/routes/userRoutes');
 const postRoutes = require('./src/routes/postRoutes');
+const cookieParser = require('cookie-parser');
 
 const app = express();
 
 // Middleware
 app.use(express.json());
 app.use(cors());
+app.use(cookieParser())
 
 // Routes
 app.get('/', (req, res) => {
